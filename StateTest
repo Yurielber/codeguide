@@ -1,0 +1,32 @@
+import huawei.Demo;
+import junit.framework.TestCase;
+
+public class DemoTest extends TestCase {
+
+	void test(String[] execpted,String[] actual)
+	{
+		int length = actual.length;
+		assertEquals(execpted.length,length);
+		for (int i = 0; i < length; i++)
+        {
+            assertEquals(execpted[i], actual[i]);
+        }
+	}
+	public void testCase01()
+	{
+		String[] InStates = {"Sikkim",
+				"Armenia",
+				"Paraguay",
+				"Greece"};
+		String FirstState = "Greece";
+
+		String[] execpted = {"Greece",
+				"Paraguay",
+				"Sikkim",
+				"Armenia"};
+		String[] actual=Demo.ArrangeStates(InStates, FirstState);
+		
+		test(execpted,actual);
+	
+	}
+}
