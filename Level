@@ -1,0 +1,9 @@
+public enum Safelevel {
+       VERY_WEAK, /*非常弱*/
+	   WEAK,        /*弱*/
+	   AVERAGE,     /*一般*/
+	   STRONG,      /*强*/
+	   VERY_STRONG, /*非常强*/
+	   SECURE,      /*安全*/
+	   VERY_SECURE  /*非常安全*/
+}
