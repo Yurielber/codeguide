@@ -1,0 +1,59 @@
+import java.util.*;
+
+public final class Demo
+{
+    /*  输入参数：
+        String[] pInStr 输入的国家名称列表
+        String FirstState 随机抽出的第一个国家
+        返回值：
+         经过排序后的国家列表
+        以下情况返回null： 国家名称重复，随机抽出的第一个国家不在国家列表中等异常情况
+    */
+    public static String[] ArrangeStates(String[] pInStr, String FirstState)
+    {
+        boolean isFindState = false;
+        
+        if (pInStr == null)
+        {
+            return null;
+        }
+        
+        Set<String> statSet = new HashSet<String>();
+        List<String> firstList = new ArrayList<String>();
+        List<String> secondList = new ArrayList<String>();
+        for (String state : pInStr)
+        {
+            int iRet = FirstState.compareTo(state);
+            if (iRet == 0)
+            {
+                isFindState = true;
+                firstList.add(state);
+            }
+            else if (iRet < 0)
+            {
+                firstList.add(state);
+            }
+            else
+            {
+                secondList.add(state);
+            }
+            
+            statSet.add(state);
+        }
+        
+        if (!isFindState)
+        {
+            return null;
+        }
+        
+        if (statSet.size() != pInStr.length)
+        {
+            return null;
+        }
+        Collections.sort(firstList);
+        Collections.sort(secondList);
+        firstList.addAll(secondList);
+        
+        return firstList.toArray(new String[firstList.size()]);
+    }
+}
