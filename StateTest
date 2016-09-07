@@ -7,9 +7,9 @@ public class DemoTest extends TestCase {
 		int length = actual.length;
 		assertEquals(execpted.length,length);
 		for (int i = 0; i < length; i++)
-        {
-            assertEquals(execpted[i], actual[i]);
-        }
+        	{
+        		assertEquals(execpted[i], actual[i]);
+        	}
 	}
 	public void testCase01()
 	{
