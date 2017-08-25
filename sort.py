@@ -14,8 +14,9 @@ def printArray():
 		print myArray[i],
 
 def bubblesort():
-	for i in range(0,len(myArray)-1):
-		for j in range(0,len(myArray)-i-1):
+	n = len(myArray)
+	for i in range(n):
+		for j in range(n-i-1):
 			if myArray[j] > myArray[j+1]:
 				tmp = myArray[j]
 				myArray[j] = myArray[j+1]
