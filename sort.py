@@ -18,9 +18,7 @@ def bubblesort():
 	for i in range(n):
 		for j in range(n-i-1):
 			if myArray[j] > myArray[j+1]:
-				tmp = myArray[j]
-				myArray[j] = myArray[j+1]
-				myArray[j+1] = tmp
+				myArray[j], myArray[j+1] = myArray[j+1], myArray[j]
 
 if __name__=='__main__':
 	length = 10
