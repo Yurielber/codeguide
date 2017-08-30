@@ -7,6 +7,7 @@ for x in $RANGES; do
 	for y in {0..255}; do
 		for z in {0..255}; do
 			target="$x.$y.$z"
+			echo "Testing [$target]"
 			stdout=$(dig @$SERVER "$target" +retry=1 +time=1 +cmd 2>&1)
 			echo "$stdout" | grep ';; Got answer:' >/dev/null 2>&1
 			got_answer=$( echo $?)
