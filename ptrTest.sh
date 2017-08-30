@@ -9,7 +9,7 @@ for x in $RANGES; do
 			echo "$stdout" | grep ';; Got answer:' >/dev/null 2>&1
 			got_answer=$( echo $?)
 			code=$( echo "$stdout" | sed -rn 's/^[[:print:]]+?, status: ([[:alpha:]]*?), id: [[:digit:]]+/\1/p')
-			if [ $got_answer == 0 -a $code == 'NOERROR' ]; then
+			if [ $got_answer == 0 ] && [ "$code" == 'NOERROR' ]; then
 				echo "$target" " --> $stdout"
 			fi
 		done
