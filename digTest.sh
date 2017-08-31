@@ -29,6 +29,11 @@ for i in {0..255}; do
 	code=$( echo "$stdout" | sed -rn 's/^[[:print:]]+?, status: ([[:alpha:]]*?), id: [[:digit:]]+/\1/p')
 	if [ $got_answer == 0 ] && [ "$code" == 'NOERROR' ]; then
 		echo "$target" >> $OUTPUT
+		local answer_start=$( echo "$stdout" | grep -n ';; ANSWER SECTION:' | sed -rn 's/^([[:digit:]]+):[[:print:]]+/\1/p' )
+		local answer_end=$( echo "$stdout" | grep -n ';; Query time:' | sed -rn 's/^([[:digit:]]+):[[:print:]]+/\1/p' )
+		if [ $answer_start -le $answer_end ]; then
+			echo "$stdout" | sed -n "$((answer_start+1)),$((answer_end-2))p" >> $OUTPUT
+		fi
 	fi
 done
 exit 0
