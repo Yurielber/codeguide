@@ -3,3 +3,6 @@ http://interactivepython.org/courselib/static/pythonds/index.html
 https://www.cs.auckland.ac.nz/courses/compsci105ssc/resources/ProblemSolvingwithAlgorithmsandDataStructures.pdf
 
 https://www.zhihu.com/question/19889750
+
+
+http://www.jianshu.com/p/8c5bf9ae421c
