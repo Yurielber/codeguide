@@ -9,3 +9,5 @@ http://www.jianshu.com/p/8c5bf9ae421c
 
 # JAVA RandomAccessFile
 http://blog.sarah-happy.ca/2010/04/binary-search-of-sorted-text-file.html
+# JAVA File insert
+https://stackoverflow.com/questions/289965/inserting-text-into-an-existing-file-via-java
