@@ -1,9 +1,0 @@
-import junit.framework.TestCase;
-
-public class DemoTest extends TestCase {
-
-	public void testCase01()
-	{
-	     assertEquals(50, Demo.CalcSpeedOfCar(95859));
-	}
-}
